@@ -1297,7 +1297,8 @@
   }
 
   /* Маленькая подсказка под кнопками */
-  .vk-hint {
+  .vk-hint,
+  .wa-hint {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-size: clamp(0.85rem, 1.4vw, 0.95rem);
@@ -2032,6 +2033,10 @@
                 <button type="button" class="submit-btn whatsapp" id="submitWaBtn">
                   Отправить в WhatsApp
                 </button>
+
+                <div class="wa-hint">
+                  Для отправки в WhatsApp выберите контакт — текст заявки уже будет вставлен
+                </div>
               </div>
 
               <div class="form-status" id="formStatus"></div>
