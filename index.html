@@ -956,7 +956,6 @@
     background-size: 14px 14px;
   }
 
-  /* 🌸 Вензель: Я [кольца] А */
   .letter-ornament {
     display: flex;
     align-items: center;
@@ -1284,18 +1283,20 @@
     cursor: not-allowed;
   }
 
-  /* Кнопка ВК — тот же оранжевый, тот же размер */
-  .submit-btn.vk {
+  /* Все кнопки одного оранжевого цвета */
+  .submit-btn.vk,
+  .submit-btn.whatsapp {
     background: #b8860b;
     box-shadow: 0 8px 24px rgba(184, 134, 11, 0.3);
   }
 
-  .submit-btn.vk:hover:not(:disabled) {
+  .submit-btn.vk:hover:not(:disabled),
+  .submit-btn.whatsapp:hover:not(:disabled) {
     background: #9c7009;
     box-shadow: 0 14px 32px rgba(184, 134, 11, 0.4);
   }
 
-  /* Маленькая подсказка под кнопкой ВК */
+  /* Маленькая подсказка под кнопками */
   .vk-hint {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -2027,6 +2028,10 @@
                 <div class="vk-hint">
                   Для отправки в ВК текст заявки уже скопирован — вставьте его в сообщение
                 </div>
+
+                <button type="button" class="submit-btn whatsapp" id="submitWaBtn">
+                  Отправить в WhatsApp
+                </button>
               </div>
 
               <div class="form-status" id="formStatus"></div>
@@ -2473,6 +2478,34 @@
         if (companionsList) companionsList.innerHTML = '';
         companionCounter = 0;
       }, 2500);
+    });
+
+    /* ═══════════════ ОТПРАВКА В WHATSAPP ═══════════════ */
+    const submitWaBtn = document.getElementById('submitWaBtn');
+
+    submitWaBtn.addEventListener('click', () => {
+      formStatus.className = 'form-status';
+      formStatus.textContent = '';
+
+      if (!validateForm()) return;
+
+      const data = buildMessage();
+      const text = formatMessage(data);
+
+      const encodedText = encodeURIComponent(text);
+      // wa.me без номера — открывает список контактов
+      const whatsappUrl = 'https://wa.me/?text=' + encodedText;
+
+      window.open(whatsappUrl, '_blank');
+
+      showSuccess('Открываем WhatsApp… Выберите контакт и нажмите «Отправить».');
+
+      setTimeout(() => {
+        form.reset();
+        if (companionsWrapper) companionsWrapper.classList.remove('active');
+        if (companionsList) companionsList.innerHTML = '';
+        companionCounter = 0;
+      }, 1500);
     });
 
     /* ═══════════════ УВЕДОМЛЕНИЕ ═══════════════ */
