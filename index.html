@@ -1,0 +1,2519 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ян и Анна — 16 октября 2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&family=Marck+Script&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+  }
+
+  html, body {
+    width: 100%;
+    min-height: 100%;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #2c1e12;
+  }
+
+  /* ═══════════════ БАННЕР ═══════════════ */
+  .banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    background-image: url('more.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(20, 30, 50, 0.4) 0%,
+      rgba(20, 30, 50, 0.2) 40%,
+      rgba(20, 30, 50, 0.45) 100%
+    );
+    z-index: 1;
+  }
+
+  .banner::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 320px;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.15) 25%,
+      rgba(255, 255, 255, 0.45) 55%,
+      rgba(255, 255, 255, 0.85) 80%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .banner-content {
+    position: relative;
+    z-index: 4;
+    color: #ffffff;
+    padding: 5.5rem 1.5rem 4rem;
+    max-width: 900px;
+    width: 100%;
+
+    max-height: 100vh;
+    max-height: 100dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .banner-content::-webkit-scrollbar { display: none; }
+
+  .banner-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.7rem, 1.3vw, 0.9rem);
+    letter-spacing: clamp(4px, 1.2vw, 10px);
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 0.6rem;
+    color: #f5e9d6;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  }
+
+  .decor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(8px, 1.6vw, 18px);
+    margin: 0.7rem auto 1.2rem;
+    max-width: 300px;
+    width: 70%;
+  }
+
+  .decor-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      rgba(240, 217, 168, 0) 0%,
+      rgba(240, 217, 168, 0.9) 100%
+    );
+    position: relative;
+  }
+
+  .decor-line:last-child {
+    background: linear-gradient(
+      to left,
+      rgba(240, 217, 168, 0) 0%,
+      rgba(240, 217, 168, 0.9) 100%
+    );
+  }
+
+  .decor-line::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 4px;
+    height: 4px;
+    background: #f0d9a8;
+    box-shadow: 0 0 8px rgba(240, 217, 168, 0.6);
+  }
+
+  .decor-line:first-child::after { right: 0; }
+  .decor-line:last-child::after  { left: 0; }
+
+  .decor-heart {
+    width: clamp(20px, 2.6vw, 28px);
+    height: clamp(20px, 2.6vw, 28px);
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 6px rgba(240, 217, 168, 0.5));
+    animation: heartbeat 2.4s ease-in-out infinite;
+  }
+
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15%      { transform: scale(1.12); }
+    30%      { transform: scale(1); }
+    45%      { transform: scale(1.08); }
+    60%      { transform: scale(1); }
+  }
+
+  .banner-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(2.8rem, 9vw, 6rem);
+    line-height: 1;
+    letter-spacing: clamp(1px, 0.5vw, 3px);
+    margin-bottom: 0.2rem;
+    text-shadow: 0 4px 25px rgba(0, 0, 0, 0.7), 0 2px 10px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+  }
+
+  .banner-names .amp {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #f0d9a8;
+    padding: 0 0.15em;
+    font-size: 0.9em;
+  }
+
+  .banner-place {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 1.1rem;
+    font-size: clamp(0.75rem, 1.4vw, 0.95rem);
+    letter-spacing: clamp(2px, 0.6vw, 5px);
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #f5e9d6;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+    line-height: 1.7;
+  }
+
+  .countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(8px, 2vw, 24px);
+    margin: 1.3rem auto 0;
+    max-width: 580px;
+    width: 100%;
+    padding: 1rem 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(240, 217, 168, 0.35);
+    border-radius: 16px;
+  }
+
+  .countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    position: relative;
+  }
+
+  .countdown-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: calc(-1 * clamp(4px, 1vw, 12px));
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 55%;
+    background: rgba(240, 217, 168, 0.35);
+  }
+
+  .countdown-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.5rem, 4.2vw, 2.6rem);
+    line-height: 1;
+    color: #ffffff;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .countdown-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.5rem, 0.9vw, 0.65rem);
+    letter-spacing: clamp(0.5px, 0.3vw, 2px);
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #f0d9a8;
+    margin-top: 0.35rem;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  .banner-date {
+    font-family: 'Cormorant Garamond', serif;
+    margin-top: 1.3rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: clamp(0.95rem, 2vw, 1.35rem);
+    letter-spacing: clamp(2px, 0.7vw, 6px);
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+    padding-top: 1rem;
+    border-top: 1px solid rgba(240, 217, 168, 0.5);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .banner-date span {
+    color: #f0d9a8;
+    font-style: italic;
+  }
+
+  .banner-cta {
+    margin-top: 1.6rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0.85rem 1.8rem;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffffff;
+    text-decoration: none;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.65rem, 1.2vw, 0.82rem);
+    letter-spacing: clamp(2px, 0.6vw, 4px);
+    text-transform: uppercase;
+    font-weight: 400;
+
+    border: 1px solid rgba(240, 217, 168, 0.7);
+    border-radius: 60px;
+
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    white-space: nowrap;
+  }
+
+  .cta-btn:hover {
+    background: #f0d9a8;
+    color: #2c1e12;
+    border-color: #f0d9a8;
+    text-shadow: none;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(240, 217, 168, 0.35);
+  }
+
+  .cta-arrow {
+    display: inline-flex;
+    width: 12px;
+    height: 12px;
+    animation: arrowDown 1.8s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+  .cta-arrow svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    stroke: currentColor;
+    fill: none;
+  }
+
+  @keyframes arrowDown {
+    0%, 100% { transform: translateY(0);   opacity: 0.7; }
+    50%      { transform: translateY(3px); opacity: 1; }
+  }
+
+  /* ═══════════════ ШАПКА ═══════════════ */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: transparent;
+    padding: 0;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1rem, 3vw, 3rem);
+    padding: 1.5rem 1.5rem;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+
+  .nav a {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: clamp(0.7rem, 1.3vw, 0.85rem);
+    letter-spacing: clamp(2px, 0.7vw, 4px);
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 0.4rem 0.2rem;
+    position: relative;
+    transition: color 0.25s ease;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75), 0 0 12px rgba(0, 0, 0, 0.4);
+    white-space: nowrap;
+  }
+
+  .nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: #f0d9a8;
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+
+  .nav a:hover { color: #f0d9a8; }
+  .nav a:hover::after { width: 100%; left: 0; }
+
+  .nav a.active { color: #f0d9a8; }
+  .nav a.active::after { width: 100%; left: 0; }
+
+  .header.scrolled {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(180, 139, 90, 0.2);
+    transition: background 0.3s ease;
+  }
+
+  .header.scrolled .nav a {
+    color: #2c1e12;
+    text-shadow: none;
+  }
+
+  .header.scrolled .nav a:hover,
+  .header.scrolled .nav a.active {
+    color: #b8860b;
+  }
+
+  /* ═══════════════ БЕЛЫЕ СЕКЦИИ ═══════════════ */
+  .section {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 1.5rem 3rem;
+    text-align: center;
+    background: #ffffff;
+  }
+
+  .greeting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .greeting-small {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.75rem, 1.4vw, 0.95rem);
+    letter-spacing: clamp(3px, 0.8vw, 5px);
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #b8860b;
+    margin-bottom: 1.2rem;
+    text-align: center;
+  }
+
+  .greeting-big {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(2rem, 6vw, 4rem);
+    line-height: 1.15;
+    letter-spacing: clamp(2px, 0.7vw, 4px);
+    text-transform: uppercase;
+    color: #2c1e12;
+    text-align: center;
+    max-width: 800px;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: opacity, transform;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal.delay-1 { transition-delay: 0.0s; }
+  .reveal.delay-2 { transition-delay: 0.2s; }
+  .reveal.delay-3 { transition-delay: 0.4s; }
+  .reveal.delay-4 { transition-delay: 0.6s; }
+  .reveal.delay-5 { transition-delay: 0.75s; }
+  .reveal.delay-6 { transition-delay: 0.9s; }
+
+  .decor-animated {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .decor-animated.visible { opacity: 1; }
+
+  .decor-animated .decor-line {
+    background: transparent !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .decor-animated .decor-line::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 0;
+    transition: width 0.9s ease 0.3s;
+  }
+
+  .decor-animated .decor-line:first-child::before {
+    right: 0;
+    background: linear-gradient(
+      to right,
+      rgba(184, 134, 11, 0) 0%,
+      rgba(184, 134, 11, 0.9) 100%
+    );
+  }
+
+  .decor-animated .decor-line:last-child::before {
+    left: 0;
+    background: linear-gradient(
+      to left,
+      rgba(184, 134, 11, 0) 0%,
+      rgba(184, 134, 11, 0.9) 100%
+    );
+  }
+
+  .decor-animated.visible .decor-line::before { width: 100%; }
+
+  .decor-animated .decor-line::after {
+    background: #b8860b !important;
+    box-shadow: 0 0 8px rgba(184, 134, 11, 0.4) !important;
+    opacity: 0;
+    transition: opacity 0.4s ease 1.0s;
+    z-index: 2;
+  }
+
+  .decor-animated.visible .decor-line::after { opacity: 1; }
+
+  .decor-animated .decor-heart {
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s;
+  }
+
+  .decor-animated.visible .decor-heart {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .decor-light .decor-line::after {
+    background: #b8860b;
+    box-shadow: 0 0 8px rgba(184, 134, 11, 0.4);
+  }
+
+  .decor-light .decor-heart path { stroke: #b8860b; }
+
+  .greeting .decor {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .info-grid {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    padding: clamp(1rem, 2vw, 1.8rem) clamp(0.8rem, 1.8vw, 1.5rem);
+    background: #ffffff;
+    position: relative;
+    transition: transform 0.35s ease;
+  }
+
+  .info-card:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 15%;
+    bottom: 15%;
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      rgba(184, 134, 11, 0) 0%,
+      rgba(184, 134, 11, 0.5) 50%,
+      rgba(184, 134, 11, 0) 100%
+    );
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .info-card:hover { transform: translateY(-3px); }
+    .info-card:hover .info-icon { transform: scale(1.08); }
+    .info-card:hover .info-icon svg {
+      fill: rgba(184, 134, 11, 0.18);
+      stroke-width: 1.6;
+    }
+    .info-card:hover .info-title::after { width: 60%; }
+  }
+
+  .info-icon {
+    width: clamp(44px, 6vw, 56px);
+    height: clamp(44px, 6vw, 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    background: transparent;
+    flex-shrink: 0;
+    transition: transform 0.4s ease;
+  }
+
+  .info-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: #b8860b;
+    stroke-width: 1.3;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: fill 0.35s ease, stroke-width 0.35s ease;
+  }
+
+  .info-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+    letter-spacing: clamp(2px, 0.6vw, 4px);
+    color: #b8860b;
+    margin-bottom: 0.9rem;
+    text-transform: uppercase;
+    position: relative;
+    transition: transform 0.35s ease;
+  }
+
+  .info-title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1px;
+    background: #b8860b;
+    transition: width 0.4s ease;
+  }
+
+  .info-main {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+    letter-spacing: clamp(1px, 0.4vw, 2px);
+    font-weight: 400;
+    color: #2c1e12;
+    line-height: 1.5;
+    margin-bottom: 0.4rem;
+  }
+
+  .info-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.72rem, 1.2vw, 0.82rem);
+    letter-spacing: clamp(1px, 0.4vw, 2px);
+    font-weight: 300;
+    color: #8a7a68;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* ═══════════════ СЕКЦИЯ «ПРИЙТИ» ═══════════════ */
+  .rsvp-title {
+    font-family: 'Marck Script', cursive;
+    font-size: clamp(1.8rem, 5vw, 3.2rem);
+    line-height: 1.3;
+    color: #b8860b;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    transform: skewY(-3deg) rotate(-1.5deg);
+    transform-origin: center;
+    padding: 0 1rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-shadow: 1px 1px 0 rgba(184, 134, 11, 0.08);
+  }
+
+  /* ═══════════════ КОНВЕРТ ═══════════════ */
+  .envelope-scene {
+    perspective: 1500px;
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .envelope {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 3 / 2;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+  }
+
+  .envelope:hover { transform: translateY(-4px); }
+
+  .envelope-back {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #fdf6e8 0%, #f5e6c8 100%);
+    border-radius: 8px;
+    box-shadow:
+      0 20px 50px rgba(184, 134, 11, 0.18),
+      0 8px 20px rgba(0, 0, 0, 0.08);
+    z-index: 1;
+  }
+
+  .envelope-front {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  .envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 55%;
+    background: linear-gradient(135deg, #f5e6c8 0%, #ecd6ab 100%);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    transform-origin: top;
+    transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+    z-index: 6;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+
+  .envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 3;
+  }
+
+  .envelope-body {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #fdf6e8 0%, #f5e6c8 100%);
+    border-radius: 8px;
+    overflow: hidden;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1.5rem;
+  }
+
+  .envelope-body::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: linear-gradient(135deg, #f0dcb4 0%, #e8cfa0 100%);
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  }
+
+  .envelope-body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 55%;
+    background: linear-gradient(135deg, #ecd6ab 0%, #e8cfa0 100%);
+    clip-path: polygon(0 0, 0 100%, 100% 50%);
+    opacity: 0.6;
+  }
+
+  .envelope-front::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 55%;
+    background: linear-gradient(-135deg, #ecd6ab 0%, #e8cfa0 100%);
+    clip-path: polygon(100% 0, 100% 100%, 0 50%);
+    opacity: 0.6;
+    border-radius: 0 8px 8px 0;
+    z-index: 4;
+  }
+
+  .envelope-to {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 7;
+    text-align: center;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  .envelope-to-line {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #b8860b;
+    margin-bottom: 0.4rem;
+  }
+
+  .envelope-to-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+    letter-spacing: 2px;
+    color: #2c1e12;
+    text-transform: uppercase;
+  }
+
+  .envelope-to-name .amp-ordinary {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: normal;
+    font-weight: 400;
+    color: inherit;
+    padding: 0 0.15em;
+    font-size: 0.9em;
+  }
+
+  .envelope.open .envelope-to { opacity: 0; }
+
+  .envelope-seal {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 8;
+    width: 56px;
+    height: 56px;
+    background: #fdf6e8;
+    border: 2px solid #b8860b;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;
+    animation: pulseSeal 2.4s ease-in-out infinite;
+  }
+
+  .envelope-seal:hover {
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(184, 134, 11, 0.45);
+  }
+
+  .envelope-seal svg { width: 100%; height: 100%; }
+
+  @keyframes pulseSeal {
+    0%, 100% { box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3); }
+    50%      { box-shadow: 0 4px 20px rgba(184, 134, 11, 0.6); }
+  }
+
+  .envelope.open .envelope-seal {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) scale(0.5);
+  }
+
+  /* ═══════════════ ПИСЬМО ═══════════════ */
+  .envelope-letter {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 90%;
+    height: 100%;
+    background:
+      radial-gradient(circle at 20% 10%, rgba(184, 134, 11, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(184, 134, 11, 0.04) 0%, transparent 40%),
+      linear-gradient(180deg, #fffdf8 0%, #fffaf0 100%);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(0) scale(0.9);
+    transition:
+      transform 0.9s cubic-bezier(0.65, 0, 0.35, 1) 0.3s,
+      opacity 0.5s ease 0.3s,
+      height 0.9s cubic-bezier(0.65, 0, 0.35, 1) 0.3s;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .envelope.open .envelope-letter {
+    transform: translateY(-60%) scale(1);
+    opacity: 1;
+    height: auto;
+    min-height: 100%;
+    z-index: 10;
+    pointer-events: auto;
+    overflow: visible;
+  }
+
+  .letter-content {
+    position: relative;
+    padding: clamp(2rem, 5vw, 3rem) clamp(1.2rem, 4vw, 2.5rem);
+    opacity: 0;
+    transition: opacity 0.5s ease 0.9s;
+    border: 1px solid rgba(184, 134, 11, 0.18);
+    border-radius: 8px;
+    margin: 14px;
+  }
+
+  .envelope.open .letter-content { opacity: 1; }
+
+  .letter-content::before {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border: 1px dashed rgba(184, 134, 11, 0.28);
+    border-radius: 5px;
+    pointer-events: none;
+  }
+
+  .letter-content::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 0 0, rgba(184, 134, 11, 0.6) 0 2px, transparent 3px),
+      radial-gradient(circle at 100% 0, rgba(184, 134, 11, 0.6) 0 2px, transparent 3px),
+      radial-gradient(circle at 0 100%, rgba(184, 134, 11, 0.6) 0 2px, transparent 3px),
+      radial-gradient(circle at 100% 100%, rgba(184, 134, 11, 0.6) 0 2px, transparent 3px);
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+  }
+
+  .letter-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1.6rem;
+    color: #b8860b;
+  }
+
+  .letter-ornament .ornament-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      rgba(184, 134, 11, 0) 0%,
+      rgba(184, 134, 11, 0.6) 100%
+    );
+    max-width: 80px;
+  }
+
+  .letter-ornament .ornament-line:last-child {
+    background: linear-gradient(
+      to left,
+      rgba(184, 134, 11, 0) 0%,
+      rgba(184, 134, 11, 0.6) 100%
+    );
+  }
+
+  .letter-ornament .ornament-symbol {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: #b8860b;
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+  }
+
+  .wedding-rings {
+    display: inline-flex;
+    align-items: center;
+    width: 2.6em;
+    height: 1.6em;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .wedding-rings svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+  }
+
+  .wedding-rings .ring {
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .wedding-rings .ring-left {
+    stroke: #b8860b;
+    filter: drop-shadow(1px 1.5px 0.5px rgba(120, 80, 10, 0.35));
+  }
+
+  .wedding-rings .ring-right {
+    stroke: #b8860b;
+    filter: drop-shadow(-1px 1.5px 0.5px rgba(120, 80, 10, 0.35));
+  }
+
+  .letter-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.5rem, 3.6vw, 2.2rem);
+    line-height: 1.2;
+    color: #b8860b;
+    text-align: center;
+    margin-bottom: 0.4rem;
+    letter-spacing: 1.5px;
+  }
+
+  .letter-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.65rem, 1.2vw, 0.78rem);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #8a7a68;
+    text-align: center;
+    margin-bottom: 2.2rem;
+  }
+
+  /* ─── Форма ─── */
+  .rsvp-form {
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .envelope .rsvp-form {
+    max-width: 100%;
+    gap: 1.4rem;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1rem, 1.9vw, 1.2rem);
+    letter-spacing: 0.5px;
+    color: #b8860b;
+    text-transform: none;
+  }
+
+  .form-label .req {
+    color: #c0392b;
+    margin-left: 3px;
+    font-style: normal;
+  }
+
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(184, 134, 11, 0.3);
+    border-radius: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    color: #2c1e12;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    outline: none;
+  }
+
+  .form-input::placeholder,
+  .form-textarea::placeholder {
+    color: #b8a894;
+    font-style: italic;
+    opacity: 0.7;
+  }
+
+  .form-input:focus,
+  .form-textarea:focus {
+    border-color: #b8860b;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(184, 134, 11, 0.1);
+  }
+
+  .form-textarea {
+    min-height: 70px;
+    resize: vertical;
+    line-height: 1.5;
+  }
+
+  .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 0.3rem;
+  }
+
+  .radio-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: #2c1e12;
+    padding: 0.5rem 0.95rem;
+    border: 1px solid rgba(184, 134, 11, 0.3);
+    border-radius: 30px;
+    transition: all 0.25s ease;
+    user-select: none;
+  }
+
+  .radio-item:hover {
+    border-color: #b8860b;
+    background: rgba(184, 134, 11, 0.05);
+  }
+
+  .radio-item input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid #b8860b;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+  }
+
+  .radio-item input[type="radio"]:checked {
+    background: #b8860b;
+    box-shadow: inset 0 0 0 3px #ffffff;
+  }
+
+  .radio-item input[type="radio"]:checked + span {
+    color: #b8860b;
+    font-weight: 600;
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.3rem;
+  }
+
+  .checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: #2c1e12;
+    padding: 0.5rem 0.95rem;
+    border: 1px solid rgba(184, 134, 11, 0.3);
+    border-radius: 30px;
+    transition: all 0.25s ease;
+    user-select: none;
+  }
+
+  .checkbox-item:hover {
+    border-color: #b8860b;
+    background: rgba(184, 134, 11, 0.05);
+  }
+
+  .checkbox-item input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid #b8860b;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+  }
+
+  .checkbox-item input[type="checkbox"]:checked {
+    background: #b8860b;
+  }
+
+  .checkbox-item input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 9px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .checkbox-item input[type="checkbox"]:checked + span {
+    color: #b8860b;
+    font-weight: 600;
+  }
+
+  /* ═══ Кнопки отправки ═══ */
+  .submit-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 0.8rem;
+  }
+
+  .submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 1rem 2rem;
+
+    background: #b8860b;
+    color: #ffffff;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(1.05rem, 1.9vw, 1.25rem);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(184, 134, 11, 0.3);
+    width: 100%;
+  }
+
+  .submit-btn:hover:not(:disabled) {
+    background: #9c7009;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(184, 134, 11, 0.4);
+  }
+
+  .submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  /* Кнопка ВК — тот же оранжевый, тот же размер */
+  .submit-btn.vk {
+    background: #b8860b;
+    box-shadow: 0 8px 24px rgba(184, 134, 11, 0.3);
+  }
+
+  .submit-btn.vk:hover:not(:disabled) {
+    background: #9c7009;
+    box-shadow: 0 14px 32px rgba(184, 134, 11, 0.4);
+  }
+
+  .submit-btn.vk .vk-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  /* Маленькая подсказка под кнопкой ВК */
+  .vk-hint {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(0.85rem, 1.4vw, 0.95rem);
+    color: #8a7a68;
+    text-align: center;
+    margin-top: 0.1rem;
+    line-height: 1.4;
+    padding: 0 0.5rem;
+  }
+
+  /* ═══ Всплывающее уведомление ═══ */
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(120px);
+    background: #2c1e12;
+    color: #ffffff;
+    padding: 1rem 1.6rem;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+    line-height: 1.4;
+    z-index: 9999;
+    text-align: center;
+    max-width: 90%;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+    pointer-events: none;
+  }
+
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .toast .toast-icon {
+    display: inline-block;
+    margin-right: 6px;
+    color: #4caf50;
+    font-weight: bold;
+  }
+
+  /* ═══ Статус формы ═══ */
+  .form-status {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    text-align: center;
+    display: none;
+  }
+
+  .form-status.success {
+    display: block;
+    background: rgba(76, 175, 80, 0.1);
+    color: #2e7d32;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+  }
+
+  .form-status.error {
+    display: block;
+    background: rgba(192, 57, 43, 0.1);
+    color: #c0392b;
+    border: 1px solid rgba(192, 57, 43, 0.3);
+  }
+
+  /* ═══ БЛОК ГОСТЕЙ ═══ */
+  .companions-wrapper {
+    display: none;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 0.4rem;
+  }
+
+  .companions-wrapper.active {
+    display: flex;
+    animation: slideDown 0.4s ease;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .companion-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.3rem 1.2rem 1.2rem;
+    background: rgba(184, 134, 11, 0.05);
+    border-left: 3px solid #b8860b;
+    border-radius: 12px;
+    animation: cardAppear 0.4s ease;
+  }
+
+  @keyframes cardAppear {
+    from { opacity: 0; transform: translateX(-10px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  .companion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .companion-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: #b8860b;
+  }
+
+  .remove-companion {
+    background: transparent;
+    border: 1px solid rgba(192, 57, 43, 0.4);
+    color: #c0392b;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+    padding: 0;
+  }
+
+  .remove-companion:hover {
+    background: #c0392b;
+    color: #ffffff;
+    border-color: #c0392b;
+  }
+
+  .add-companion-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 0.4rem;
+    padding: 0.7rem 1.4rem;
+    background: transparent;
+    color: #b8860b;
+    border: 1.5px dashed #b8860b;
+    border-radius: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    align-self: flex-start;
+  }
+
+  .add-companion-btn:hover {
+    background: rgba(184, 134, 11, 0.08);
+    border-style: solid;
+    transform: translateY(-1px);
+  }
+
+  .add-companion-btn::before {
+    content: "+";
+    font-size: 1.3em;
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  /* ═══════════════ АДАПТАЦИЯ ═══════════════ */
+  @media (max-width: 767px) {
+    .banner-content {
+      padding: 5rem 1.2rem 3.5rem;
+      justify-content: flex-start;
+      padding-top: 6rem;
+    }
+
+    .banner::after { height: 260px; }
+
+    .banner-label { margin-bottom: 0.4rem; }
+
+    .decor {
+      margin: 0.5rem auto 0.9rem;
+      max-width: 240px;
+      width: 60%;
+    }
+
+    .banner-place { margin-top: 0.8rem; }
+
+    .countdown {
+      margin-top: 1rem;
+      padding: 0.85rem 0.6rem;
+      gap: 6px;
+    }
+
+    .banner-date {
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      gap: 0.4rem;
+    }
+
+    .banner-cta { margin-top: 1.2rem; }
+
+    .cta-btn {
+      padding: 0.75rem 1.4rem;
+      gap: 8px;
+      font-size: 0.65rem;
+      letter-spacing: 1.8px;
+    }
+
+    .greeting-small {
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      margin-bottom: 1rem;
+    }
+
+    .greeting-big { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+
+    .greeting .decor {
+      margin-top: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .info-grid { max-width: 480px; }
+    .info-card { padding: 1rem 0.6rem; }
+
+    .info-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0.8rem;
+    }
+
+    .info-title {
+      font-size: 1rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.6rem;
+    }
+
+    .info-main { font-size: 0.75rem; }
+    .info-sub  { font-size: 0.68rem; }
+
+    .rsvp-title {
+      font-size: clamp(1.6rem, 6vw, 2.4rem);
+      margin-bottom: 2rem;
+    }
+
+    .letter-content {
+      padding: 1.5rem 1rem;
+      margin: 10px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .envelope {
+      max-width: 100%;
+      aspect-ratio: 4 / 3;
+    }
+
+    .envelope-seal {
+      width: 48px;
+      height: 48px;
+      padding: 8px;
+    }
+
+    .envelope-to-name { font-size: 1.1rem; }
+
+    .letter-content {
+      padding: 1.3rem 0.9rem;
+      margin: 8px;
+    }
+
+    .letter-ornament .ornament-symbol { font-size: 1.3rem; }
+  }
+
+  @media (max-width: 480px) {
+    .nav {
+      gap: 0.6rem;
+      padding: 0.9rem 0.5rem;
+    }
+
+    .nav a {
+      font-size: 0.62rem;
+      letter-spacing: 1.2px;
+    }
+
+    html { scroll-padding-top: 60px; }
+
+    .banner::after { height: 220px; }
+
+    .banner-content { padding: 4.5rem 1rem 3rem; }
+
+    .banner-label {
+      font-size: 0.68rem;
+      letter-spacing: 4px;
+    }
+
+    .decor { max-width: 200px; gap: 6px; }
+    .banner-names { font-size: clamp(2.4rem, 11vw, 3.6rem); }
+
+    .banner-place {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      line-height: 1.6;
+    }
+
+    .countdown {
+      padding: 0.7rem 0.5rem;
+      gap: 4px;
+      border-radius: 12px;
+    }
+
+    .countdown-item:not(:last-child)::after { right: -2px; }
+    .countdown-num { font-size: clamp(1.3rem, 6vw, 1.8rem); }
+
+    .countdown-label {
+      font-size: 0.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    .banner-date {
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      padding-top: 0.7rem;
+    }
+
+    .cta-btn {
+      padding: 0.7rem 1.2rem;
+      gap: 6px;
+      font-size: 0.6rem;
+      letter-spacing: 1.5px;
+    }
+
+    .cta-arrow { width: 10px; height: 10px; }
+
+    .greeting-big {
+      font-size: clamp(1.4rem, 8vw, 2rem);
+      letter-spacing: 1.5px;
+    }
+
+    .greeting-small {
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+    }
+
+    .info-grid { flex-direction: column; max-width: 320px; }
+    .info-card { padding: 1.4rem 1rem; }
+
+    .info-card:not(:last-child)::after {
+      right: 10%;
+      left: 10%;
+      top: auto;
+      bottom: 0;
+      width: auto;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        rgba(184, 134, 11, 0) 0%,
+        rgba(184, 134, 11, 0.5) 50%,
+        rgba(184, 134, 11, 0) 100%
+      );
+    }
+
+    .info-icon {
+      width: 46px;
+      height: 46px;
+      margin-bottom: 0.9rem;
+    }
+
+    .info-title { font-size: 1.15rem; margin-bottom: 0.8rem; }
+    .info-main { font-size: 0.82rem; }
+    .info-sub  { font-size: 0.72rem; }
+
+    .rsvp-title {
+      font-size: clamp(1.4rem, 7vw, 2rem);
+      margin-bottom: 1.8rem;
+      transform: skewY(-2deg) rotate(-1deg);
+    }
+
+    .letter-content {
+      padding: 1.1rem 0.7rem;
+      margin: 6px;
+    }
+
+    .letter-title { font-size: 1.3rem; }
+    .letter-subtitle { font-size: 0.6rem; letter-spacing: 2.5px; margin-bottom: 1.5rem; }
+    .letter-ornament .ornament-symbol { font-size: 1.1rem; }
+
+    .rsvp-form { gap: 1.1rem; }
+    .radio-group,
+    .checkbox-group { gap: 0.5rem; }
+
+    .radio-item,
+    .checkbox-item {
+      font-size: 0.88rem;
+      padding: 0.45rem 0.75rem;
+    }
+
+    .form-input,
+    .form-textarea {
+      padding: 0.75rem 0.9rem;
+      font-size: 0.95rem;
+    }
+
+    .submit-btn {
+      padding: 0.9rem 1.6rem;
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+    }
+
+    .companion-card { padding: 1rem 0.9rem; }
+
+    .add-companion-btn {
+      font-size: 0.9rem;
+      padding: 0.6rem 1.1rem;
+      letter-spacing: 0.5px;
+      align-self: stretch;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    .reveal { opacity: 1; transform: none; }
+    .decor-animated { opacity: 1; }
+    .decor-animated .decor-line::before { width: 100%; }
+    .decor-animated .decor-line::after  { opacity: 1; }
+    .decor-animated .decor-heart { opacity: 1; transform: scale(1); }
+  }
+</style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <nav>
+      <ul class="nav">
+        <li><a href="#home" class="active">Главная</a></li>
+        <li><a href="#program">Программа</a></li>
+        <li><a href="#rsvp">Прийти</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ═══════════ БАННЕР ═══════════ -->
+  <section id="home" class="banner">
+
+    <div class="banner-content">
+
+      <div class="banner-label">Наша свадьба</div>
+
+      <div class="decor">
+        <span class="decor-line"></span>
+        <svg class="decor-heart" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12 21s-7.5-4.7-9.6-9.3C.6 8.3 2.5 4.5 6 4.5c2 0 3.4 1.1 4.2 2.3.4.6 1.2.6 1.6 0 .8-1.2 2.2-2.3 4.2-2.3 3.5 0 5.4 3.8 3.6 7.2C19.5 16.3 12 21 12 21z"
+            fill="none"
+            stroke="#f0d9a8"
+            stroke-width="1.6"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          />
+        </svg>
+        <span class="decor-line"></span>
+      </div>
+
+      <div class="banner-names">
+        Ян<span class="amp">&</span>Анна
+      </div>
+
+      <div class="banner-place">
+        Ресторан «Волга Плаза»<br>
+        Красноармейская, 1Б
+      </div>
+
+      <div class="countdown" id="countdown">
+        <div class="countdown-item">
+          <div class="countdown-num" id="days">00</div>
+          <div class="countdown-label">дней</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-num" id="hours">00</div>
+          <div class="countdown-label">часов</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-num" id="minutes">00</div>
+          <div class="countdown-label">минут</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-num" id="seconds">00</div>
+          <div class="countdown-label">секунд</div>
+        </div>
+      </div>
+
+      <div class="banner-date">
+        16 октября <span>2026</span> · 14:00
+      </div>
+
+      <div class="banner-cta">
+        <a href="#rsvp" class="cta-btn">
+          <span>Подтвердить присутствие</span>
+          <span class="cta-arrow">
+            <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 2 L7 11" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M3 8 L7 12 L11 8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ СЕКЦИЯ «ПРОГРАММА» ═══════════ -->
+  <section id="program" class="section">
+    <div class="greeting">
+
+      <div class="greeting-small reveal delay-1">Будем рады видеть вас</div>
+
+      <div class="greeting-big reveal delay-2">В этот особенный день</div>
+
+      <div class="decor decor-light decor-animated">
+        <span class="decor-line"></span>
+        <svg class="decor-heart" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12 21s-7.5-4.7-9.6-9.3C.6 8.3 2.5 4.5 6 4.5c2 0 3.4 1.1 4.2 2.3.4.6 1.2.6 1.6 0 .8-1.2 2.2-2.3 4.2-2.3 3.5 0 5.4 3.8 3.6 7.2C19.5 16.3 12 21 12 21z"
+            fill="none"
+            stroke="#b8860b"
+            stroke-width="1.6"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          />
+        </svg>
+        <span class="decor-line"></span>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card reveal delay-4">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="5" width="18" height="16" rx="2"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+              <line x1="8" y1="3" x2="8" y2="7"/>
+              <line x1="16" y1="3" x2="16" y2="7"/>
+              <circle cx="12" cy="15" r="1" fill="#b8860b" stroke="none"/>
+            </svg>
+          </div>
+          <div class="info-title">Дата</div>
+          <div class="info-main">16 октября 2026</div>
+          <div class="info-sub">начало в 14:00</div>
+        </div>
+
+        <div class="info-card reveal delay-5">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+          </div>
+          <div class="info-title">Место</div>
+          <div class="info-main">Красноармейская 1Б</div>
+          <div class="info-sub">Волга Плаза</div>
+        </div>
+
+        <div class="info-card reveal delay-6">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 3 L8 8 C8 10.2 9.8 12 12 12 L12 12 C14.2 12 16 10.2 16 8 L16 3"/>
+              <line x1="12" y1="12" x2="12" y2="21"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="6" y1="3" x2="18" y2="3"/>
+            </svg>
+          </div>
+          <div class="info-title">Празднование</div>
+          <div class="info-main">банкет, ужин</div>
+          <div class="info-sub">веселье и уют</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ СЕКЦИЯ «ПРИЙТИ» С КОНВЕРТОМ ═══════════ -->
+  <section id="rsvp" class="section">
+
+    <h2 class="rsvp-title">
+      Будем рады разделить с вами этот день
+    </h2>
+
+    <div class="envelope-scene">
+
+      <div class="envelope" id="envelope">
+
+        <div class="envelope-back"></div>
+
+        <div class="envelope-letter">
+          <div class="letter-content">
+
+            <div class="letter-ornament">
+              <span class="ornament-line"></span>
+              <span class="ornament-symbol">
+                <span>Я</span>
+                <span class="wedding-rings">
+                  <svg viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="ring ring-left" cx="22" cy="20" r="13"/>
+                    <circle class="ring ring-right" cx="38" cy="20" r="13"/>
+                  </svg>
+                </span>
+                <span>А</span>
+              </span>
+              <span class="ornament-line"></span>
+            </div>
+
+            <div class="letter-title">Приглашение</div>
+            <div class="letter-subtitle">Подтвердите присутствие</div>
+
+            <form class="rsvp-form" id="rsvpForm" novalidate>
+
+              <div class="form-field">
+                <label class="form-label" for="fullname">
+                  Фамилия и имя <span class="req">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="fullname"
+                  name="fullname"
+                  class="form-input"
+                  required
+                >
+              </div>
+
+              <div class="form-field">
+                <label class="form-label">
+                  С кем вы придёте <span class="req">*</span>
+                </label>
+                <div class="radio-group">
+                  <label class="radio-item">
+                    <input type="radio" name="attendance" value="Приду один" required>
+                    <span>Приду один</span>
+                  </label>
+                  <label class="radio-item">
+                    <input type="radio" name="attendance" value="Приду с гостями">
+                    <span>Приду с гостями</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="companions-wrapper" id="companionsWrapper">
+                <div class="form-label" style="margin-top: 0.2rem;">
+                  Ваши спутники
+                </div>
+                <div id="companionsList" style="display: flex; flex-direction: column; gap: 1rem;"></div>
+                <button type="button" class="add-companion-btn" id="addCompanionBtn">
+                  Добавить гостя
+                </button>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label">
+                  Что предпочитаете пить <span class="req">*</span>
+                </label>
+                <div class="checkbox-group">
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="drink" value="Виски">
+                    <span>Виски</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="drink" value="Водка">
+                    <span>Водка</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="drink" value="Белое вино">
+                    <span>Белое вино</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="drink" value="Красное вино">
+                    <span>Красное вино</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="drink" value="Коньяк">
+                    <span>Коньяк</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="drink" value="Безалкогольные напитки">
+                    <span>Безалкогольные напитки</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="allergy">
+                  Есть ли у вас аллергия на какие-то продукты? <span class="req">*</span>
+                </label>
+                <textarea
+                  id="allergy"
+                  name="allergy"
+                  class="form-textarea"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="submit-buttons">
+                <button type="submit" class="submit-btn" id="submitBtn">
+                  Отправить в Telegram
+                </button>
+
+                <button type="button" class="submit-btn vk" id="submitVkBtn">
+                  <svg class="vk-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path d="M13.162 18.994c.609 0 .858-.406.851-.915-.031-1.917.714-2.949 2.059-1.604 1.488 1.488 1.796 2.519 3.603 2.519h3.2c.808 0 1.126-.26 1.126-.668 0-.863-1.421-2.386-2.625-3.504-1.686-1.565-1.765-1.602-.313-3.486 1.801-2.339 4.157-5.336 2.073-5.336h-3.981c-.772 0-.828.435-1.103 1.083-.995 2.347-2.886 5.387-3.604 4.922-.751-.485-.407-2.406-.35-5.261.015-.754.011-1.271-1.141-1.539-.629-.145-1.241-.205-1.809-.205-2.273 0-3.841.953-2.95 1.119 1.571.293 1.42 3.692 1.054 5.16-.638 2.556-3.036-2.024-4.035-4.305-.241-.548-.315-.974-1.175-.974H.591c-.492 0-.787.16-.787.516 0 .602 2.96 6.72 5.786 9.77 2.756 2.975 5.48 2.708 7.372 2.708z"/>
+                  </svg>
+                  Отправить в ВКонтакте
+                </button>
+
+                <div class="vk-hint">
+                  Для отправки в ВК текст заявки уже скопирован — вставьте его в сообщение
+                </div>
+              </div>
+
+              <div class="form-status" id="formStatus"></div>
+
+            </form>
+
+          </div>
+        </div>
+
+        <div class="envelope-front">
+
+          <div class="envelope-flap"></div>
+
+          <div class="envelope-body">
+            <div class="envelope-to">
+              <div class="envelope-to-line">Для гостей</div>
+              <div class="envelope-to-name">
+                Яна <span class="amp-ordinary">и</span> Анны
+              </div>
+            </div>
+
+            <button class="envelope-seal" id="envelopeSeal" type="button" aria-label="Открыть приглашение">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 21s-7.5-4.7-9.6-9.3C.6 8.3 2.5 4.5 6 4.5c2 0 3.4 1.1 4.2 2.3.4.6 1.2.6 1.6 0 .8-1.2 2.2-2.3 4.2-2.3 3.5 0 5.4 3.8 3.6 7.2C19.5 16.3 12 21 12 21z"
+                  fill="#b8860b"
+                  stroke="#b8860b"
+                  stroke-width="1.4"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="envelope-hint" id="envelopeHint">Нажмите на конверт, чтобы открыть</div>
+
+    </div>
+
+  </section>
+
+  <!-- Всплывающее уведомление -->
+  <div class="toast" id="toast">
+    <span class="toast-icon">✓</span>
+    <span id="toastText">Текст скопирован</span>
+  </div>
+
+  <script>
+    /* ═══════════════ НАСТРОЙКИ ═══════════════ */
+    const TELEGRAM_USERNAME = 'YANWILD';
+    const VK_PROFILE_URL = 'https://vk.ru/id423952148';
+
+    /* ═══════════════ ШАПКА ПРИ СКРОЛЛЕ ═══════════════ */
+    const sections = document.querySelectorAll('.section, .banner');
+    const navLinks = document.querySelectorAll('.nav a');
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+
+      if (window.scrollY > window.innerHeight * 0.7) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    /* ═══════════════ ПОЯВЛЕНИЕ ПРИ СКРОЛЛЕ ═══════════════ */
+    const revealElements = document.querySelectorAll('.reveal, .decor-animated');
+
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+    } else {
+      revealElements.forEach(el => el.classList.add('visible'));
+    }
+
+    /* ═══════════════ ТАЙМЕР ═══════════════ */
+    const weddingDate = new Date('2026-10-16T14:00:00').getTime();
+
+    const daysEl    = document.getElementById('days');
+    const hoursEl   = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+
+    const pad = (num) => String(num).padStart(2, '0');
+
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = weddingDate - now;
+
+      if (diff <= 0) {
+        daysEl.textContent    = '00';
+        hoursEl.textContent   = '00';
+        minutesEl.textContent = '00';
+        secondsEl.textContent = '00';
+        return;
+      }
+
+      const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours   = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      daysEl.textContent    = pad(days);
+      hoursEl.textContent   = pad(hours);
+      minutesEl.textContent = pad(minutes);
+      secondsEl.textContent = pad(seconds);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    /* ═══════════════ ОТКРЫТИЕ КОНВЕРТА ═══════════════ */
+    const envelope     = document.getElementById('envelope');
+    const envelopeSeal = document.getElementById('envelopeSeal');
+
+    function openEnvelope() {
+      if (envelope.classList.contains('open')) return;
+      envelope.classList.add('open');
+
+      setTimeout(() => {
+        envelope.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 400);
+    }
+
+    if (envelopeSeal) {
+      envelopeSeal.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openEnvelope();
+      });
+    }
+
+    if (envelope) {
+      envelope.addEventListener('click', (e) => {
+        if (envelope.classList.contains('open')) return;
+        if (e.target.closest('.rsvp-form')) return;
+        openEnvelope();
+      });
+    }
+
+    /* ═══════════════ ДИНАМИЧЕСКИЕ ГОСТИ ═══════════════ */
+    const companionsWrapper = document.getElementById('companionsWrapper');
+    const companionsList    = document.getElementById('companionsList');
+    const addCompanionBtn   = document.getElementById('addCompanionBtn');
+    const attendanceRadios  = document.querySelectorAll('input[name="attendance"]');
+
+    let companionCounter = 0;
+
+    function createCompanionCard(index) {
+      const card = document.createElement('div');
+      card.className = 'companion-card';
+      card.dataset.index = index;
+
+      card.innerHTML = `
+        <div class="companion-header">
+          <div class="companion-number">Гость №${index}</div>
+          <button type="button" class="remove-companion" aria-label="Удалить гостя">×</button>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label">
+            Фамилия и имя <span class="req">*</span>
+          </label>
+          <input
+            type="text"
+            class="form-input companion-name"
+          >
+        </div>
+
+        <div class="form-field">
+          <label class="form-label">Что предпочитает пить</label>
+          <div class="checkbox-group">
+            <label class="checkbox-item">
+              <input type="checkbox" class="companion-drink" value="Виски">
+              <span>Виски</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" class="companion-drink" value="Водка">
+              <span>Водка</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" class="companion-drink" value="Белое вино">
+              <span>Белое вино</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" class="companion-drink" value="Красное вино">
+              <span>Красное вино</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" class="companion-drink" value="Коньяк">
+              <span>Коньяк</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" class="companion-drink" value="Безалкогольные напитки">
+              <span>Безалкогольные напитки</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label">
+            Есть ли аллергия на какие-то продукты? <span class="req">*</span>
+          </label>
+          <textarea class="form-textarea companion-allergy"></textarea>
+        </div>
+      `;
+
+      card.querySelector('.remove-companion').addEventListener('click', () => {
+        card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        card.style.opacity = '0';
+        card.style.transform = 'translateX(-10px)';
+        setTimeout(() => {
+          card.remove();
+          renumberCompanions();
+        }, 300);
+      });
+
+      return card;
+    }
+
+    function renumberCompanions() {
+      const cards = companionsList.querySelectorAll('.companion-card');
+      cards.forEach((card, i) => {
+        card.dataset.index = i + 1;
+        card.querySelector('.companion-number').textContent = `Гость №${i + 1}`;
+      });
+      companionCounter = cards.length;
+    }
+
+    function addCompanion() {
+      companionCounter++;
+      const card = createCompanionCard(companionCounter);
+      companionsList.appendChild(card);
+    }
+
+    attendanceRadios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        if (radio.value === 'Приду с гостями' && radio.checked) {
+          companionsWrapper.classList.add('active');
+          if (companionsList.children.length === 0) {
+            addCompanion();
+          }
+        } else if (radio.value === 'Приду один' && radio.checked) {
+          companionsWrapper.classList.remove('active');
+          companionsList.innerHTML = '';
+          companionCounter = 0;
+        }
+      });
+    });
+
+    if (addCompanionBtn) {
+      addCompanionBtn.addEventListener('click', addCompanion);
+    }
+
+    /* ═══════════════ СБОР ТЕКСТА ЗАЯВКИ ═══════════════ */
+    function buildMessage() {
+      const fullname   = document.getElementById('fullname').value.trim();
+      const attendance = document.querySelector('input[name="attendance"]:checked')?.value || '';
+      const drinkBoxes = document.querySelectorAll('input[name="drink"]:checked');
+      const drinks     = Array.from(drinkBoxes).map(cb => cb.value);
+      const allergy    = document.getElementById('allergy').value.trim();
+
+      const companions = [];
+      const companionCards = companionsList.querySelectorAll('.companion-card');
+      companionCards.forEach(card => {
+        const name = card.querySelector('.companion-name').value.trim();
+        const cDrinks = Array.from(card.querySelectorAll('.companion-drink:checked'))
+          .map(cb => cb.value);
+        const cAllergy = card.querySelector('.companion-allergy').value.trim();
+        if (name) {
+          companions.push({ name, drinks: cDrinks, allergy: cAllergy });
+        }
+      });
+
+      return { fullname, attendance, drinks, allergy, companions };
+    }
+
+    function validateForm() {
+      const data = buildMessage();
+      if (!data.fullname) {
+        showError('Пожалуйста, укажите Фамилию и имя.');
+        return false;
+      }
+      if (!data.attendance) {
+        showError('Пожалуйста, выберите: придёте один или с гостями.');
+        return false;
+      }
+      if (data.attendance === 'Приду с гостями' && data.companions.length === 0) {
+        showError('Пожалуйста, укажите хотя бы одного гостя.');
+        return false;
+      }
+      if (data.drinks.length === 0) {
+        showError('Пожалуйста, выберите хотя бы один напиток.');
+        return false;
+      }
+      if (!data.allergy) {
+        showError('Пожалуйста, укажите информацию об аллергии (если нет — напишите «нет»).');
+        return false;
+      }
+      return true;
+    }
+
+    function formatMessage(data) {
+      let text = 'Здравствуйте! Подтверждаю присутствие на свадьбе Яна и Анны.\n\n';
+      text += '👤 Гость: ' + data.fullname + '\n';
+      text += '🎟 Присутствие: ' + data.attendance + '\n';
+      text += '🍷 Напитки: ' + data.drinks.join(', ') + '\n';
+      text += '⚠️ Аллергия: ' + data.allergy + '\n';
+
+      if (data.companions.length > 0) {
+        text += '\n👥 Спутники (' + data.companions.length + '):\n';
+        data.companions.forEach((c, i) => {
+          text += '  ' + (i + 1) + '. ' + c.name;
+          if (c.drinks.length > 0) {
+            text += ' — ' + c.drinks.join(', ');
+          }
+          text += '\n';
+          text += '     ⚠️ Аллергия: ' + (c.allergy || 'нет') + '\n';
+        });
+      }
+
+      return text;
+    }
+
+    /* ═══════════════ ФУНКЦИЯ КОПИРОВАНИЯ ═══════════════ */
+    function copyToClipboard(text) {
+      return new Promise((resolve, reject) => {
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(resolve).catch(() => {
+            // Fallback
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+              document.execCommand('copy');
+              resolve();
+            } catch (err) {
+              reject(err);
+            }
+            document.body.removeChild(textarea);
+          });
+        } else {
+          const textarea = document.createElement('textarea');
+          textarea.value = text;
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.select();
+          try {
+            document.execCommand('copy');
+            resolve();
+          } catch (err) {
+            reject(err);
+          }
+          document.body.removeChild(textarea);
+        }
+      });
+    }
+
+    /* ═══════════════ ОТПРАВКА В TELEGRAM ═══════════════ */
+    const form       = document.getElementById('rsvpForm');
+    const formStatus = document.getElementById('formStatus');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      formStatus.className = 'form-status';
+      formStatus.textContent = '';
+
+      if (!validateForm()) return;
+
+      const data = buildMessage();
+      const text = formatMessage(data);
+
+      const encodedText = encodeURIComponent(text);
+      const telegramUrl = 'https://t.me/' + TELEGRAM_USERNAME + '?text=' + encodedText;
+
+      window.open(telegramUrl, '_blank');
+
+      showSuccess('Открываем Telegram… Нажмите «Отправить» в чате, чтобы завершить.');
+
+      setTimeout(() => {
+        form.reset();
+        if (companionsWrapper) companionsWrapper.classList.remove('active');
+        if (companionsList) companionsList.innerHTML = '';
+        companionCounter = 0;
+      }, 1500);
+    });
+
+    /* ═══════════════ ОТПРАВКА В ВК ═══════════════ */
+    const submitVkBtn = document.getElementById('submitVkBtn');
+
+    submitVkBtn.addEventListener('click', () => {
+      formStatus.className = 'form-status';
+      formStatus.textContent = '';
+
+      if (!validateForm()) return;
+
+      const data = buildMessage();
+      const text = formatMessage(data);
+
+      // Копируем текст в буфер
+      copyToClipboard(text).then(() => {
+        showToast('Текст заявки скопирован! Вставьте его в сообщение ВКонтакте');
+      }).catch(() => {
+        showToast('Не удалось скопировать. Выделите текст и скопируйте вручную.');
+      });
+
+      // Открываем профиль ВК
+      window.open(VK_PROFILE_URL, '_blank');
+
+      showSuccess('Открываем ВКонтакте… Вставьте скопированный текст и нажмите «Отправить».');
+
+      // Сбрасываем форму
+      setTimeout(() => {
+        form.reset();
+        if (companionsWrapper) companionsWrapper.classList.remove('active');
+        if (companionsList) companionsList.innerHTML = '';
+        companionCounter = 0;
+      }, 2500);
+    });
+
+    /* ═══════════════ УВЕДОМЛЕНИЕ ═══════════════ */
+    const toast = document.getElementById('toast');
+    const toastText = document.getElementById('toastText');
+    let toastTimer = null;
+
+    function showToast(message) {
+      toastText.textContent = message;
+      toast.classList.add('show');
+
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+
+    function showSuccess(text) {
+      formStatus.className = 'form-status success';
+      formStatus.textContent = text;
+      formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function showError(text) {
+      formStatus.className = 'form-status error';
+      formStatus.textContent = text;
+      formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  </script>
+
+</body>
+</html>
